@@ -1,0 +1,8 @@
+{
+  "name": "metria",
+  "version": "0.0.1",
+  "description": "Math utilities",
+  "main": "index.js",
+  "author": "Thiago Oliveira",
+  "license": "MIT"
+}
