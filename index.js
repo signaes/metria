@@ -1,4 +1,4 @@
-const PRIMARY = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+const PRIMARY = range(9);
 const primes = [];
 
 function first (array) {
@@ -25,6 +25,16 @@ function divide (array) {
   return array.reduce((a, b) => a / b);
 }
 
+function range (n) {
+  const a = [];
+
+  for (let i = 1; i < (n + 1); i += 1) {
+    a.push(i);
+  }
+
+  return a;
+}
+
 function isPrime (n) {
   return n !== 0 && !(PRIMARY
     .slice(1)
@@ -34,6 +44,30 @@ function isPrime (n) {
 
 function isComposite (n) {
   return !isPrime(n);
+}
+
+function factors (n) {
+  const a = [];
+  let remainder = n;
+  const increment = i => remainder % i > 0 ? i + 1 : i;
+  let i = 2;
+
+  if (n === 1) {
+    return [1];
+  }
+
+  while (i <= remainder && remainder > 0) {
+    if (remainder % i === 0) {
+      a.push(i);
+    }
+
+    remainder = remainder % i === 0 ? remainder / i : remainder;
+    console.log('remainder changed to', remainder)
+    i = increment(i);
+    console.log('i incremented to', i)
+  }
+
+  return a;
 }
 
 function getPrimes () {
@@ -80,8 +114,10 @@ const metria = {
   multiply,
   divide,
   primes,
+  range,
   isPrime,
   isComposite,
+  factors,
   getPrimes
 };
 
