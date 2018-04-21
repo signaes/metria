@@ -32,6 +32,9 @@ function isPrime (n) {
     .some(p => n % p === 0));
 }
 
+function isComposite (n) {
+  return !isPrime(n);
+}
 
 function getPrimes () {
   let increment = 1;
@@ -78,6 +81,7 @@ const metria = {
   divide,
   primes,
   isPrime,
+  isComposite,
   getPrimes
 };
 
