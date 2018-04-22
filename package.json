@@ -1,6 +1,6 @@
 {
   "name": "metria",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Math utilities",
   "main": "index.js",
   "author": "Thiago Oliveira",
