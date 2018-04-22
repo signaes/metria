@@ -100,6 +100,26 @@ function getPrimes () {
       }
 
       return primes;
+    },
+    enumerable () {
+      let i = 0;
+      let n = 1;
+
+      return {
+        next () {
+          if (primes[i]) {
+            n = primes[i];
+            i += 1;
+
+            return n;
+          }
+
+          n = getPrimes().next();
+          i += 1;
+
+          return n;
+        }
+      }
     }
   }
 }
