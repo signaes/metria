@@ -62,9 +62,7 @@ function factors (n) {
     }
 
     remainder = remainder % i === 0 ? remainder / i : remainder;
-    console.log('remainder changed to', remainder)
     i = increment(i);
-    console.log('i incremented to', i)
   }
 
   return a;
